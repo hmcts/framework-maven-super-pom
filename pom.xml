@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.gov.justice</groupId>
+    <artifactId>maven-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Maven Parent</name>
+    <description>Top-level parent super POM for all Common Platform projects</description>
+
+    <organization>
+        <name>Ministry of Justice</name>
+        <url>http://www.justice.gov.uk/</url>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <cpp.scm.git.url>git@github.com:CJSCommonPlatform/maven-parent.git</cpp.scm.git.url>
+        <cpp.scm.connection>scm:git:${scm.git.url}/</cpp.scm.connection>
+        <cpp.scm.developerConnection>${scm.connection}</cpp.scm.developerConnection>
+        <cpp.scm.url>https://github.com/CJSCommonPlatform/maven-parent</cpp.scm.url>
+    </properties>
+
+    <scm>
+        <connection>${cpp.scm.connection}</connection>
+        <developerConnection>${cpp.scm.developerConnection}</developerConnection>
+        <url>${cpp.scm.url}</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>indigoblue-nexus-release</id>
+            <name>IndigoBlue Snapshot Repository</name>
+            <url>https://tools.indigoblue.co.uk/nexus/content/repositories/moj-releases/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>indigoblue-nexus-snapshot</id>
+            <name>IndigoBlue Release Repository</name>
+            <url>https://tools.indigoblue.co.uk/nexus/content/repositories/moj-snapshots/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
