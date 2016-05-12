@@ -22,7 +22,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <cpp.scm.git.url>git@github.com:CJSCommonPlatform/maven-parent.git</cpp.scm.git.url>
-        <cpp.scm.connection>scm:git:${scm.git.url}/</cpp.scm.connection>
+        <cpp.scm.connection>scm:git:${cpp.scm.git.url}/</cpp.scm.connection>
         <cpp.scm.developerConnection>${scm.connection}</cpp.scm.developerConnection>
         <cpp.scm.url>https://github.com/CJSCommonPlatform/maven-parent</cpp.scm.url>
     </properties>
