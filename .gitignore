@@ -72,3 +72,6 @@ sftp-config.json
 ehthumbs.db
 Thumbs.db
 
+# pre-commit validation #
+.bundle/
+vendor/
