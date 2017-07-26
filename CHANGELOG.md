@@ -9,6 +9,10 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 - Switch from IndigoBlue repository to Bintray (releases only)
 
+### Changed
+
+- Only deploy on tag
+
 ### Removed
 
 - Deployment to IndigoBlue repository

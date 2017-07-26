@@ -6,7 +6,7 @@
 
     <groupId>uk.gov.justice</groupId>
     <artifactId>maven-super-pom</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>pom</packaging>
 
     <name>Maven Super Pom</name>
@@ -26,11 +26,8 @@
         <cpp.scm.developerConnection>${project.scm.connection}</cpp.scm.developerConnection>
         <cpp.scm.url>https://github.com/CJSCommonPlatform/maven-super-pom</cpp.scm.url>
 
-        <cpp.distribution.release.id>bintray-cjscommonplatform-maven-releases</cpp.distribution.release.id>
-        <cpp.distribution.release.url>http://dl.bintray.com/cjscommonplatform/maven-releases</cpp.distribution.release.url>
-
-        <cpp.distribution.snapshot.id>indigoblue-nexus-snapshot</cpp.distribution.snapshot.id>
-        <cpp.distribution.snapshot.url>https://tools.indigoblue.co.uk/nexus/content/repositories/moj-snapshots/</cpp.distribution.snapshot.url>
+        <cpp.distribution.repo>maven-releases</cpp.distribution.repo>
+        <cpp.distribution.package>maven-super-pom</cpp.distribution.package>
     </properties>
 
     <scm>
@@ -41,16 +38,9 @@
 
     <distributionManagement>
         <repository>
-            <name>CJS Common Platform Release Repository</name>
-            <id>${cpp.distribution.release.id}</id>
-            <url>${cpp.distribution.release.url}</url>
-            <uniqueVersion>false</uniqueVersion>
+            <id>bintray-cjscommonplatform-maven-releases</id>
+            <name>cjscommonplatform-maven-releases</name>
+            <url>https://api.bintray.com/maven/cjscommonplatform/${cpp.distribution.repo}/${cpp.distribution.package}/;publish=1</url>
         </repository>
-        <snapshotRepository>
-            <name>CJS Common Platform Snapshot Repository</name>
-            <id>${cpp.distribution.snapshot.id}</id>
-            <url>${cpp.distribution.snapshot.url}</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
     </distributionManagement>
 </project>
