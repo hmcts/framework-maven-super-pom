@@ -1,15 +1,21 @@
 ---
+dist: trusty
+sudo: false
 language: java
 jdk:
 - oraclejdk8
+git:
+  depth: 3
 cache:
   directories:
   - "$HOME/.m2"
 before_install:
 - git clone https://github.com/CJSCommonPlatform/travis-settings.git target/travis-settings
-script: mvn -B -V --settings target/travis-settings/settings.xml verify
+- ln -sfT ${PWD}/target/travis-settings/settings.xml ${HOME}/.m2/settings.xml
+install: mvn -B -Dsilent=true org.apache.maven.plugins:maven-dependency-plugin:3.0.1:go-offline
+script: mvn -B -V verify
 after_success:
-- '[[ $TRAVIS_TAG == release-* ]] && mvn -DskipTests=true -B -V --errors org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy --settings target/travis-settings/settings.xml'
+- '[[ $TRAVIS_TAG == release-* ]] && mvn -DskipTests=true -B -V --errors org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy'
 env:
   global:
   - secure: bpcjm0DqW8ZMbPEUcKFO9IGctgSsC7ZSVMi/GsQS+BEbn0HiOlPNotw4oF7AZqeGv/RJ+0neaXawC1+JNTWRd0nNmL5UFG7FU5Gg0WUCfujYKGk1+bK0jaEd7a6o8+vYvciN1M53s5EIAoWIQCbzTAa0cSer/iB6lic8yFpSex27bHTTNMOH+c8hkYISvRBrPLdbwpze47WMXF/oyBnGdGK/xeZN6KSIv6QweyW1XUYC8IFTp0htVj2XlDtRl1UQSpXQ++kXCMiOwLCA7iVzldhtHS8Ar01UaivZGZCK6HIdk4GYcc3UcUdWmKcRJkzdDZ/xwvbKyAUi2Nu0ImMdIOb49kStHMPLdhWGctmccx2fRto/kNLM9Wcilp6Ianwq8Vl1p2KJuKczA9Nn3AvvbxSJPMlna36UPxgc8rdY7ryEa/L3LTVfqKZKyl/EtyICSGHTXv01GOydosisYWfbBBuYKWALbv+md0jFGdmGEYFTDKwmg7LsObTo0ST6LqoCNrCRW7ktrrkZ9Ew06ysL/lkZifGOVAGEodmEWzdsOe9Hf2QQjseyWHT7GVNHUhLALITrGrkioBGKW8qqtViqa+qTOMkghdal6O7P67na/XbNt0Js6kl/hktnke0TBWdEOps/2g7Tj2Onkw2/lqZMuZvkO3IeglF4LZnqe2QIirM=
