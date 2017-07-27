@@ -21,13 +21,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <cpp.scm.git.url>git@github.com:CJSCommonPlatform/maven-super-pom.git</cpp.scm.git.url>
+        <cpp.repo.owner>CJSCommonPlatform</cpp.repo.owner>
+        <cpp.repo.owner-lower>cjscommonplatform</cpp.repo.owner-lower>
+        <cpp.repo.name>maven-super-pom</cpp.repo.name>
+        <cpp.scm.git.url>git@github.com:${cpp.repo.owner}/${cpp.repo.name}.git</cpp.scm.git.url>
         <cpp.scm.connection>scm:git:${cpp.scm.git.url}/</cpp.scm.connection>
         <cpp.scm.developerConnection>${project.scm.connection}</cpp.scm.developerConnection>
-        <cpp.scm.url>https://github.com/CJSCommonPlatform/maven-super-pom</cpp.scm.url>
+        <cpp.scm.url>https://github.com/${cpp.repo.owner}/${cpp.repo.name}</cpp.scm.url>
 
-        <cpp.distribution.repo>maven-releases</cpp.distribution.repo>
-        <cpp.distribution.package>maven-super-pom</cpp.distribution.package>
+        <cpp.bintray.repo>maven-releases</cpp.bintray.repo>
+        <cpp.distribution.id>bintray-${cpp.repo.owner-lower}-${cpp.bintray.repo}</cpp.distribution.id>
+        <cpp.distribution.url>https://api.bintray.com/maven/${cpp.repo.owner-lower}/${cpp.bintray.repo}/${cpp.repo.name}/;publish=1</cpp.distribution.url>
     </properties>
 
     <scm>
@@ -38,9 +42,9 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray-cjscommonplatform-maven-releases</id>
-            <name>cjscommonplatform-maven-releases</name>
-            <url>https://api.bintray.com/maven/cjscommonplatform/${cpp.distribution.repo}/${cpp.distribution.package}/;publish=1</url>
+            <id>${cpp.distribution.id}</id>
+            <name>${cpp.repo.owner}</name>
+            <url>${cpp.distribution.url}</url>
         </repository>
     </distributionManagement>
 </project>
