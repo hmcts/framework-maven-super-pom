@@ -1,8 +1,8 @@
-dist: trusty
+dist: xenial
 sudo: false
 language: java
 jdk:
-- oraclejdk8
+- openjdk11
 git:
   depth: 3
 cache:
