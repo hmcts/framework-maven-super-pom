@@ -5,6 +5,7 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [17.0.0] - 2023-05-05
 ### Changed
+- Release of Java 17 version
 - Bumped the version number to 17.0.0 to match the java 17 versions of the framework
 
 ## [11.0.0] - 2023-01-25
