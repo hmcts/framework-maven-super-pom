@@ -1,6 +1,6 @@
-dist: xenial
+dist: trusty
+sudo: false
 language: java
-os: linux
 jdk:
 - oraclejdk8
 git:

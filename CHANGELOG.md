@@ -3,8 +3,11 @@ All notable changes to this project will be documented in this file, which follo
 on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
-## [2.0.0] - 2020-09-22
+## [8.0.0] - 2024-01-10
+### Changed
+- Created java 8 release branch
 
+## [2.0.0] - 2020-09-22
 ### Changed
 - Moved from bintray to cloudsmith for hosting of maven artifacts
 - Removed bintray specific properties and/or replaced with those for cloudsmit
