@@ -20,7 +20,7 @@ resources:
       type: github
       name: hmcts/cpp-azure-devops-templates
       endpoint: 'hmcts'
-      ref: 'main'
+      ref: 'fix/support-different-maven-goals'
  
     - repository: buildSettings
       type: github
@@ -43,3 +43,4 @@ stages:
     parameters:
       sonarqube_project: ${{ variables['sonarqubeProject'] }}
       coveralls_repo_token: $(cp-maven-super-pom)
+      skip_sonarr_coveralls: true
