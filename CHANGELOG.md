@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file, which follo
 on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
+## [17.0.1-M1] - 2025-04-07
+### Changed
+- Github migration to HMCTS Organisation
+
 ## [17.0.0] - 2023-05-05
 ### Changed
 - Release of Java 17 version
