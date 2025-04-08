@@ -3,8 +3,8 @@ All notable changes to this project will be documented in this file, which follo
 on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
-- Github migration to HMCTS Organisation
+[## [Unreleased]
+- Github migration to HMCTS Organisation]()
 
 ## [17.0.0] - 2023-05-05
 ### Changed
